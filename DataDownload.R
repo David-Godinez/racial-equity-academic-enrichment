@@ -31,3 +31,5 @@ view(testdf)
 #We could expand to include "City, medium" if we would like
 #Going forward, we won't need to include the fips filter, but we will need more filters to make the download small enough
 #We will need filters for the specific data that we want (racial breakdowns, AP/IB enrollment, suspension rates, etc.)
+
+#Website I found with documentation for variables: https://educationdata.urban.org/documentation/schools.html?fbclid=IwAR2q--4bTAOsRGrO8JNdXToeLrD9mqmFCQ10gsiM34TSALPkcb97grn8JA4
