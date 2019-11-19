@@ -1,5 +1,5 @@
 #General Data Download
-
+library(tidyverse)
 library(devtools)
 library(educationdata)
 
@@ -32,4 +32,20 @@ view(testdf)
 #Going forward, we won't need to include the fips filter, but we will need more filters to make the download small enough
 #We will need filters for the specific data that we want (racial breakdowns, AP/IB enrollment, suspension rates, etc.)
 
+#progress towards downloading discipline data (not completed)
+num_ISS <- get_education_data(level = 'schools',
+                             source = 'crdc',
+                             topic = 'students_susp_in_sch',
+                             filters = list(year = '2015', #our focus year
+                                            urban_centric_locale = list('11', '12'),
+                                            by = list("race", "sex")
+                             add_labels = TRUE, 
+                             csv = FALSE)
+
+discipline_test <- get_education_data(level = "schools",
++                                      source = "crdc",
++                                      topic = "discipline",
++                                      filters = list(year = '2015', urban_centric_locale = '11'),
++                                      by = c("disability", "race", "sex"))
 #Website I found with documentation for variables: https://educationdata.urban.org/documentation/schools.html?fbclid=IwAR2q--4bTAOsRGrO8JNdXToeLrD9mqmFCQ10gsiM34TSALPkcb97grn8JA4
+
