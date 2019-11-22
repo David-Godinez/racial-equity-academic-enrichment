@@ -128,3 +128,6 @@ num_ISS <- get_education_data(
                                 
 #Website I found with documentation for variables: https://educationdata.urban.org/documentation/schools.html?fbclid=IwAR2q--4bTAOsRGrO8JNdXToeLrD9mqmFCQ10gsiM34TSALPkcb97grn8JA4
 
+#states (fips) that we are looking into, based on their policies of funding charter scools
+focus_fips <- list('4','6','11','12', '13', '15', '21', '26', '29', '32', '37', '40', '47', '48', '53')
+focus_fips_data <- get_education_data(level = 'schools', source = 'crdc', topic = 'discipline', filters = list(year = '2015', fips = focus_fips), by = c('disability', 'race', 'sex'), add_labels = TRUE, csv = FALSE)
