@@ -131,5 +131,7 @@ num_ISS <- get_education_data(
 #states (fips) that we are looking into, based on their policies of funding charter scools
 focus_fips <- list('4','6','11','12', '13', '15', '21', '26', '29', '32', '37', '40', '47', '48', '53')
 focus_fips_data <- get_education_data(level = 'schools', source = 'crdc', topic = 'discipline', filters = list(year = '2015', fips = focus_fips), by = c('disability', 'race', 'sex'), add_labels = TRUE, csv = FALSE)
-
 #this is too big of a data set to download reasonably download.. 2000+ rows. Must limit further before download.
+test_ncessch_set <- list('040000100120', '040000100616')
+focus2 <- focus_fips_data %>% filter(ncessch == test_ncessch_set)
+  #^this works with creating a list, then filtering based on that list
