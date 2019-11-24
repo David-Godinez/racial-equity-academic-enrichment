@@ -135,3 +135,29 @@ focus_fips_data <- get_education_data(level = 'schools', source = 'crdc', topic 
 test_ncessch_set <- list('040000100120', '040000100616')
 focus2 <- focus_fips_data %>% filter(ncessch == test_ncessch_set)
   #^this works with creating a list, then filtering based on that list
+  
+ #Definitely *not* the most efficient way, but I think this could work, as long as we only have to do it once:
+# I ran this using only 2 states and it took about 35 min to fully process
+# General logic: get all data from focus states, then filter (which is really quick), then download as a .csv
+#I was able to successfully download a csv with the data for 2 of the states
+# We can run this same thing when using the full list of fips
+# the "test_ncessch_set list could be created based on the ccd code you have done to come up with our focus nces ids
+# then we can download them as .csv files and upload those to the github for easy access
+#It took about 10 min per 100 "pages" to process.. so a 2000 line project should take about 3 hours to download, but we'll only need to do it once
+#We could also limit our data to only include ~10 states to make it more manageable.  
+focus_fips <- list('4','53')
+focus_fips_data <- get_education_data(level = 'schools', 
+                                      source = 'crdc', 
+                                      topic = 'discipline', 
+                                      filters = list(year = '2015', 
+                                                     fips = focus_fips), 
+                                      by = c('disability', 'race', 'sex'), 
+                                      add_labels = TRUE, 
+                                      csv = FALSE)
+
+test_ncessch_set <- list('040000100120', '040000100616')
+focus2 <- focus_fips_data %>% filter(ncessch == test_ncessch_set)
+write.csv(focus2, "C:/Users/jh3873a/Desktop//AZDC_test.csv", row.names = FALSE)
+ 
+#If you run all of this at once, you should be able to just leave it running and then it will end with a .csv file on your Desktop
+  
