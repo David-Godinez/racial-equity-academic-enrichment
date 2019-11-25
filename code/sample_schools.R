@@ -129,7 +129,84 @@ table(crdc_urban_schools$charter_crdc)
 ##validity of our results.
 
 
- 
+#Additions from my code -JH
+focus_fips_discipline <- get_education_data(level = 'schools', 
+                                      source = 'crdc', 
+                                      topic = 'discipline', 
+                                      filters = list(year = '2015', 
+                                                     fips = focus_fips), 
+                                      by = c('disability', 'race', 'sex'), 
+                                      add_labels = TRUE, 
+                                      csv = FALSE)
+
+focus_nces_discipline <- focus_fips_discipline %>% filter(ncessch == focus_ncessch)
+
+write.csv(focus2, "C:/Users/jh3873a/Desktop//FocusNCES_Discipline.csv", row.names = FALSE)
+
+#^this is going to take a *long* time, but I'm letting it run and it should proceed 
+# to downloading a .csv file when it completes, so it shouldn't need to be "babysat."
+
+#^this is only for discipline
+#Below: code that should work, but will need some time to run
+#I typed these out as general plans, but can't test them because the download is currently going
+#Feel free to modify the path to try downloading .csv files to your desktop, then upload 
+#to github when you have the chance:
+
+#--------- Harassment and Bullying --------------
+focus_fips_HB <- get_education_data(level = 'schools', 
+                                      source = 'crdc', 
+                                      topic = 'harassment and bullying', #I'm not sure if this is the topic title 
+                                      filters = list(year = '2015', 
+                                                     fips = focus_fips), 
+                                      by = c('disability', 'race', 'sex'), #not sure if these are the endpoints
+                                      add_labels = TRUE, 
+                                      csv = FALSE)
+
+focus_nces_HB <- focus_fips_HB %>% filter(ncessch == focus_ncessch)
+
+write.csv(focus_nces_HB, "C:/Users/jh3873a/Desktop//FocusNCES_HB.csv", row.names = FALSE)
+
+#--------- Restraint and Seclusion ----------------
+focus_fips_RS <- get_education_data(level = 'schools', 
+                                      source = 'crdc', 
+                                      topic = 'restraint and seclusion', #I'm not sure if this is the topic title 
+                                      filters = list(year = '2015', 
+                                                     fips = focus_fips), 
+                                      by = c('disability', 'race', 'sex'), #not sure if these are the endpoints
+                                      add_labels = TRUE, 
+                                      csv = FALSE)
+
+focus_nces_RS <- focus_fips_RS %>% filter(ncessch == focus_ncessch)
+
+write.csv(focus_nces_RS, "C:/Users/jh3873a/Desktop//FocusNCES_RS.csv", row.names = FALSE)
+
+#--------- Chronic Absenteeism ----------
+focus_fips_CA <- get_education_data(level = 'schools', 
+                                      source = 'crdc', 
+                                      topic = 'Chronic Absenteeism', #I'm not sure if this is the topic title 
+                                      filters = list(year = '2015', 
+                                                     fips = focus_fips), 
+                                      by = c('disability', 'race', 'sex'), #not sure if these are the endpoints
+                                      add_labels = TRUE, 
+                                      csv = FALSE)
+
+focus_nces_CA <- focus_fips_CA %>% filter(ncessch == focus_ncessch)
+
+write.csv(focus_nces_CA, "C:/Users/jh3873a/Desktop//FocusNCES_RS.csv", row.names = FALSE)
+
+#--------- AP Exams ----------
+focus_fips_CA <- get_education_data(level = 'schools', 
+                                      source = 'crdc', 
+                                      topic = 'ap exams', #I'm not sure if this is the topic title 
+                                      filters = list(year = '2015', 
+                                                     fips = focus_fips), 
+                                      by = c('disability', 'race', 'sex'), #not sure if these are the endpoints
+                                      add_labels = TRUE, 
+                                      csv = FALSE)
+
+focus_nces_AP <- focus_fips_AP %>% filter(ncessch == focus_ncessch)
+
+write.csv(focus_nces_AP, "C:/Users/jh3873a/Desktop//FocusNCES_RS.csv", row.names = FALSE)
  
 
 
