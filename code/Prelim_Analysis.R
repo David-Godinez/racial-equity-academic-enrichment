@@ -41,6 +41,12 @@ crdc_tidy_data_2 <-
 crdc_tidy_data_2 <-
   mutate(crdc_tidy_data_2, prop_enrl_ap_total = enrl_ap_total / total_enrollment)
 
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_black_enrl_ap = enrl_ap_black / black)
+
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_hispanic_enrl_ap = enrl_ap_hispanic / hispanic)
+
 #splitting charter and traditional public
 charter_data <- filter(crdc_tidy_data_2, charter == 1)
 trad_public_data <- filter(crdc_tidy_data_2, charter == 0)
@@ -78,3 +84,21 @@ ggplot(data = charter_data, aes(x = prop_white, y = prop_enrl_ap_total)) + geom_
 #PUBLIC: Overall AP enrollment proportion based on white proportion
 ggplot(data = trad_public_data, aes(x = prop_white, y = prop_enrl_ap_total)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
 #!! positive correlation: more white schools have higher overall AP Enrollment
+
+#--------Black AP Enrollment vs. School proportion White
+ggplot(data = crdc_tidy_data_2, aes(x = prop_white, y = prop_black_enrl_ap, color = charter)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
+
+ggplot(data = charter_data, aes(x = prop_white, y = prop_black_enrl_ap)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
+#As the proportion of white students in a charter school increases, the proportion of black students enrolled in an AP class decreases
+
+ggplot(data = trad_public_data, aes(x = prop_white, y = prop_black_enrl_ap)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
+#As the proportion of white students in a traditional public school increases, the proportion of black students enrolled in an AP class remains roughly the same
+
+#-------Hispanic AP Enrollment vs. School proportion white
+ggplot(data = crdc_tidy_data_2, aes(x = prop_white, y = prop_hispanic_enrl_ap, color = charter)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
+
+ggplot(data = charter_data, aes(x = prop_white, y = prop_hispanic_enrl_ap)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
+#As the proportion of white students in a charter school increases, the proportion of hispanic students enrolled in an AP class decreases
+
+ggplot(data = trad_public_data, aes(x = prop_white, y = prop_hispanic_enrl_ap)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
+#As the proportion of white students in a traditional public school increases, the proportion of hispanic students enrolled in an AP class remains roughly the same
