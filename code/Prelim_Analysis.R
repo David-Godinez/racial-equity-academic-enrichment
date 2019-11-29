@@ -47,6 +47,18 @@ crdc_tidy_data_2 <-
 crdc_tidy_data_2 <-
   mutate(crdc_tidy_data_2, prop_hispanic_enrl_ap = enrl_ap_hispanic / hispanic)
 
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_white_enrl_ap = enrl_ap_white / white)
+
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_asian_enrl_ap = enrl_ap_asian / asian)
+
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_ind_ntv_enrl_ap = enrl_ap_ind_natv / amindian_alnative)
+
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_hintv_islandr_enrl_ap = enrl_ap_hinatv_islndr / hi_native_islander)
+
 #splitting charter and traditional public
 charter_data <- filter(crdc_tidy_data_2, charter == 1)
 trad_public_data <- filter(crdc_tidy_data_2, charter == 0)
