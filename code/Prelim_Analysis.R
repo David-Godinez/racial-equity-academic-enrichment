@@ -143,3 +143,13 @@ ggplot(data = charter_data, aes(x = prop_white, y = prop_ind_ntv_enrl_ap)) + geo
 
 ggplot(data = trad_public_data, aes(x = prop_white, y = prop_ind_ntv_enrl_ap)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
 #As the proportion of white students in a traditional public school increases, the proportion of American Indian/Alaska Native students enrolled in an AP class increases
+
+#-------Hawaiian/Pacific Islander vs. School proportion white
+ggplot(data = crdc_tidy_data_2,
+       aes(x = prop_white, y = prop_hintv_islandr_enrl_ap, color = charter)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
+
+ggplot(data = charter_data, aes(x = prop_white, y = prop_hintv_islandr_enrl_ap)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
+#As the proportion of white students in a charter school increases, the proportion of Hawaiian/Pacific Islander students enrolled in an AP class increases slightly
+
+ggplot(data = trad_public_data, aes(x = prop_white, y = prop_hintv_islandr_enrl_ap)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
+#As the proportion of white students in a traditional public school increases, the proportion of Hawaiian/Pacific Islander students enrolled in an AP class increases slightly
