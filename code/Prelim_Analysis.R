@@ -7,7 +7,7 @@ library(dplyr)
 
 # Get Data (once repo is public) ----------------------------------------------------------------
 
-School_data <-
+crdc_tidy_data <-
   
   read.csv(
     text = GET(
