@@ -17,6 +17,7 @@ crdc_tidy_data <-
     header = 1
     
   )
+#^having some challenges with this, may just need to use here()
 
 # Get Data (Download then Upload -- Should be removed once data is public)--------
 
@@ -168,3 +169,19 @@ ggplot(data = charter_data, aes(x = prop_white, y = prop_hintv_islandr_enrl_ap))
 
 ggplot(data = trad_public_data, aes(x = prop_white, y = prop_hintv_islandr_enrl_ap)) + geom_point() + geom_smooth(method = 'lm', se = FALSE)
 #As the proportion of white students in a traditional public school increases, the proportion of Hawaiian/Pacific Islander students enrolled in an AP class increases slightly
+
+#Models -------------------------------
+all_school_model = lm(formula = prop_enrl_ap_total ~ prop_white, data = crdc_tidy_data_2)
+summary(all_school_model)
+#coef 0.086926
+#p-value 0.001822 -- SIGNIFICANT
+
+trad_public_model = lm(formula = prop_enrl_ap_total ~ prop_white, data = trad_public_data)
+summary(trad_public_model)
+#coef 0.16234
+#p-value 2.465e-08 -- SIGNIFICANT
+
+charter_model = lm(formula = prop_enrl_ap_total ~ prop_white, data = charter_data)
+summary(charter_model)
+#coef -0.12234
+#p-value 0.0771 -- NOT SIGNIFICANT
