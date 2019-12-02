@@ -229,4 +229,40 @@ summary(trad_public_ib_model)
 #coef 0.14798
 #p-value .007802 -- SIGNIFICANT
 
+prop_AP_black_model = lm(formula = prop_black_enrl_ap ~ prop_white, data = crdc_tidy_data_2)
+summary(prop_AP_black_model)
+#coef -0.022590
+#p-value .4754 -- VERY NOT SIGNIFICANT
 
+prop_AP_black_charter_model = lm(formula = prop_black_enrl_ap ~ prop_white, data = charter_data)
+summary(prop_AP_black_charter_model)
+#coef -0.16026
+#p-value 0.02826
+#NOTE: proportion of black students enrolled in an AP according to white school population IS significant
+#in *charters* and negative
+
+prop_AP_black_trad_public_model = lm(formula = prop_black_enrl_ap ~ prop_white, data = trad_public_data)
+summary(prop_AP_black_trad_public_model)
+#coef 0.026323
+#p-value 0.4472 -- VERY NOT SIGNIFICANT
+
+prop_AP_hispanic_model = lm(formula = prop_hispanic_enrl_ap ~ prop_white, data = crdc_tidy_data_2)
+summary(prop_AP_hispanic_model)
+#coef -0.008078
+#p-value 0.7872 -- VERY NOT SIGNIFICANT
+
+prop_AP_hispanic_charter_model = lm(formula = prop_hispanic_enrl_ap ~ prop_white, data = charter_data)
+summary(prop_AP_hispanic_charter_model)
+#coef -0.14265
+#p-value 0.05368 -- SIGNIFICANT at .1 LEVEL
+
+prop_AP_hispanic_trad_public_model = lm(formula = prop_hispanic_enrl_ap ~ prop_white, data = trad_public_data)
+summary(prop_AP_hispanic_trad_public_model)
+#coef 0.040377
+#p-value 0.2014 -- NOT SIGNIFICANT
+
+#KEY TAKEAWAY: There is a statistically significant negative relationship
+# between increased proportions of white students in urban charter schools
+# and the proportion of black and hispanic students enrolled in AP programs.
+# There is not a similar statistically significant relationship in urban
+# traditional public schools.
