@@ -76,6 +76,34 @@ crdc_tidy_data_2 <-
   mutate(crdc_tidy_data_2,
          prop_hintv_islandr_enrl_ap = enrl_ap_hinatv_islndr / hi_native_islander)
 
+crdc_tidy_data_2 <-
+  mutate(
+    crdc_tidy_data_2,
+    enrl_ib_total = enrl_ib_white + enrl_ib_black + enrl_ib_hispanic + enrl_ib_asian + enrl_ib_ind_natv + enrl_ib_hinatv_islndr
+  )
+
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_enrl_ib_total = enrl_ib_total / total_enrollment)
+
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_black_enrl_ib = enrl_ib_black / black)
+
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_hispanic_enrl_ib = enrl_ib_hispanic / hispanic)
+
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_white_enrl_ib = enrl_ib_white / white)
+
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_asian_enrl_ib = enrl_ib_asian / asian)
+
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2, prop_ind_ntv_enrl_ib = enrl_ib_ind_natv / amindian_alnative)
+
+crdc_tidy_data_2 <-
+  mutate(crdc_tidy_data_2,
+         prop_hintv_islandr_enrl_ib = enrl_ib_hinatv_islndr / hi_native_islander)
+
 #splitting charter and traditional public
 charter_data <- filter(crdc_tidy_data_2, charter == 1)
 trad_public_data <- filter(crdc_tidy_data_2, charter == 0)
