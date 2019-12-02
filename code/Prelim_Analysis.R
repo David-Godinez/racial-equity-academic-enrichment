@@ -213,3 +213,20 @@ charter_model = lm(formula = prop_enrl_ap_total ~ prop_white, data = charter_dat
 summary(charter_model)
 #coef -0.12234
 #p-value 0.0771 -- NOT SIGNIFICANT
+
+all_school_ib_model = lm(formula = prop_enrl_ib_total ~ prop_white, data = crdc_tidy_data_2)
+summary(all_school_ib_model)
+#coef -0.19639
+#p-value 0.22 -- NOT SIGNIFICANT
+
+charter_ib_model = lm(formula = prop_enrl_ib_total ~ prop_white, data = charter_data)
+summary(charter_ib_model)
+#coef 8.67 (huge)
+#p-value 0.2029 -- NOT SIGNIFICANT
+
+trad_public_ib_model = lm(formula = prop_enrl_ib_total ~ prop_white, data = trad_public_data)
+summary(trad_public_ib_model)
+#coef 0.14798
+#p-value .007802 -- SIGNIFICANT
+
+
