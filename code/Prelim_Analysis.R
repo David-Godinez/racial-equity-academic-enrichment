@@ -17,14 +17,6 @@ crdc_tidy_data <-
     header = 1
     
   )
-#^having some challenges with this, may just need to use here()
-
-# Get Data (Download then Upload -- Should be removed once data is public)--------
-
-crdc_tidy_data <-
-  read.csv("C:/Users/julia/Downloads/crdc_tidy_data.csv") #would use 'here' if using this long-term
-
-View(crdc_tidy_data)
 
 # Data Prep ---------------------------------------------------------------------
 
