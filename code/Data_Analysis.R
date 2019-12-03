@@ -98,6 +98,10 @@ crdc_tidy_data_2 <-
   mutate(crdc_tidy_data_2,
          prop_hintv_islandr_enrl_ib = enrl_ib_hinatv_islndr / hi_native_islander)
 
+#[DAVID INSERT CODE HERE TO CREATE PROP_NONWHITE_ENRL_AP]
+
+#!!!
+                           
 #splitting charter and traditional public
 charter_data <- filter(crdc_tidy_data_2, charter == 1)
 trad_public_data <- filter(crdc_tidy_data_2, charter == 0)
@@ -260,3 +264,7 @@ summary(prop_AP_hispanic_trad_public_model)
 # and the proportion of black and hispanic students enrolled in AP programs.
 # There is not a similar statistically significant relationship in urban
 # traditional public schools.
+                           
+#DAVID INSERT THE FINAL CODE FOR THE VISUALIZATIONS AND MODELS FOR OUR PRESENTATION HERE
+#Shoud be all non-white, black, hispanic, asian: graph and lm 
+                           
