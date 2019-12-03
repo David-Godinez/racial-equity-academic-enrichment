@@ -34,19 +34,19 @@ crdc_tidy_data_2 <-
   mutate(crdc_tidy_data, prop_white = white / total_enrollment)
 
 crdc_tidy_data_2 <-
-  mutate(crdc_tidy_data2, prop_black = black / total_enrollment)
+  mutate(crdc_tidy_data_2, prop_black = black / total_enrollment)
 
 crdc_tidy_data_2 <-
-  mutate(crdc_tidy_data2, prop_hispanic = hispanic / total_enrollment)
+  mutate(crdc_tidy_data_2, prop_hispanic = hispanic / total_enrollment)
 
 crdc_tidy_data_2 <-
-  mutate(crdc_tidy_data2, prop_asian = asian / total_enrollment)
+  mutate(crdc_tidy_data_2, prop_asian = asian / total_enrollment)
 
 crdc_tidy_data_2 <-
-  mutate(crdc_tidy_data2, prop_ind_natv = amindian_alnative / total_enrollment)
+  mutate(crdc_tidy_data_2, prop_ind_natv = amindian_alnative / total_enrollment)
 
 crdc_tidy_data_2 <-
-  mutate(crdc_tidy_data2, prop_hinatv_islndr = hi_native_islander / total_enrollment)
+  mutate(crdc_tidy_data_2, prop_hinatv_islndr = hi_native_islander / total_enrollment)
 
 crdc_tidy_data_2 <-
   mutate(
