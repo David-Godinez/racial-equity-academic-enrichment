@@ -28,10 +28,12 @@ View(crdc_tidy_data)
 
 # Data Prep ---------------------------------------------------------------------
 
+crdc_tidy_data_2 <- mutate(crdc_tidy_data, charter = factor(crdc_tidy_data_2$charter)
+                           
 #Adding relevant columns to df
 
 crdc_tidy_data_2 <-
-  mutate(crdc_tidy_data, prop_white = white / total_enrollment)
+  mutate(crdc_tidy_data_2, prop_white = white / total_enrollment)
 
 crdc_tidy_data_2 <-
   mutate(crdc_tidy_data_2, prop_black = black / total_enrollment)
