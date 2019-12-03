@@ -11,7 +11,7 @@ crdc_tidy_data <-
   
   read.csv(
     text = GET(
-      "https://github.com/davidgmartinez/final-project/blob/master/data/crdc_tidy_data.csv"
+      "https://raw.githubusercontent.com/davidgmartinez/final-project/master/data/crdc_tidy_data.csv"
     ),
     
     header = 1
