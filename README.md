@@ -1,2 +1,6 @@
-# final-project
-Contains all of the data and code for our final project.
+# Racid Equity and Acadameic Enrichment: An Analysis of Urban Charter and Traditional Public Schools
+
+David Godinez and Julia Hoffman
+Introduction to Applied Political Data Science
+School of Public Affairs, American University
+Fall 2019
