@@ -3,7 +3,6 @@
 # Preliminaries -----------------------------------------------------------
 
 library(tidyverse)
-library(patchwork)
 library(ggplot2)
 
 ##Requires objects and data frames created in `Data_Analysis.R`
@@ -86,9 +85,6 @@ ggplot(data = crdc_tidy_data_2, aes(x = prop_white, y = prop_hispanic_enrl_ap)) 
   ggsave("hipanic_ap_se.png")
 
 
-
-
-
 #Non-linear
 
 ggplot(data = crdc_tidy_data_2, aes(x = prop_white, y = prop_hispanic_enrl_ap)) + 
@@ -152,14 +148,6 @@ summary(prop_AP_asian_trad_public_model)
 
 
 
-
-
-
-
-
-
-
-
 # Non-White Regression ----------------------------------------------------
 
 
@@ -213,18 +201,3 @@ summary(nonwhite_ap_charter_lm)
 nonwhite_ap_public_lm <- lm(formula = prop_nonwhite_ap_enrl ~ prop_white, data = trad_public_data)
 
 summary(nonwhite_ap_public_lm)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
