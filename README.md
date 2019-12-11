@@ -1,4 +1,4 @@
-# Racid Equity and Acadameic Enrichment: An Analysis of Urban Charter and Traditional Public Schools
+# Racial Equity and Academic Enrichment: An Analysis of Urban Charter and Traditional Public Schools
 
 ## David Godinez and Julia Hoffman
 ## Introduction to Applied Political Data Science
